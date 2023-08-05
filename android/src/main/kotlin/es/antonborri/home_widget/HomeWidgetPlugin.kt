@@ -48,6 +48,7 @@ class HomeWidgetPlugin : FlutterPlugin, MethodCallHandler, ActivityAware,
                             is String -> prefs.putString(id, data)
                             is Double -> prefs.putLong(id, java.lang.Double.doubleToRawLongBits(data))
                             is Int -> prefs.putInt(id, data)
+                            is Long -> prefs.putLong(id, data)
                             else -> result.error("-10", "Invalid Type ${data!!::class.java.simpleName}. Supported types are Boolean, Float, String, Double, Long", IllegalArgumentException())
                         }
                     } else {
